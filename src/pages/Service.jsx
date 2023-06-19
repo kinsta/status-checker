@@ -18,16 +18,15 @@ const Service = () => {
     }
 
     const CheckApplications = async (name) => {
-        const response = await fetch(`https://api.kinsta.com/v2/applications/${name}`, {
+        const response = await fetch(`${KinstaAPIUrl}/applications/${name}`, {
             method: 'GET',
-            mode: 'no-cors',
             headers: {
                 Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`
             }
         });
         const data = await response.json();
         console.log(data);
-        uniqueName = '';
+        setUniqueName = '';
     }
 
     useEffect(() => {
