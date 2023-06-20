@@ -50,15 +50,19 @@ const Service = () => {
         const data = await resp.json();
         let sitesData = data.company.sites;
         let site = sitesData.find(site => site.name === name || site.display_name === name);
-        setName(site.display_name);
-        if (site.status === 'live') {
-            setStatus('🟢 Running');
-        } else if (site.status === 'staging') {
-            setStatus('🟡 Staging');
+        if (site) {
+            setName(site.display_name);
+            if (site.status === 'live') {
+                setStatus('🟢 Running');
+            } else if (site.status === 'staging') {
+                setStatus('🟡 Staging');
+            } else {
+                setStatus('🟡 Unknown');
+            }
+            setUniqueName('');
         } else {
-            setStatus('🟡 Unknown');
+            setUniqueName('No such site found for your account');
         }
-        setUniqueName('');
     }
 
     const CheckApplications = async (name) => {
@@ -79,19 +83,23 @@ const Service = () => {
         const data = await resp.json();
         let appsData = data.company.apps.items;
         let app = appsData.find(app => app.unique_name === name || app.name === name || app.display_name === name);
-        setName(app.display_name);
-        if (app.status === 'deploymentSuccess') {
-            setStatus('🟢 Running');
-        } else if (app.status === 'deploymentFailed') {
-            setStatus('🔴 Failed');
-        } else if (app.status === 'deploymentPending') {
-            setStatus('🟡 Pending');
-        } else if (app.status === 'deploymentInProgress') {
-            setStatus('🟡 In Progress');
+        if (app) {
+            setName(app.display_name);
+            if (app.status === 'deploymentSuccess') {
+                setStatus('🟢 Running');
+            } else if (app.status === 'deploymentFailed') {
+                setStatus('🔴 Failed');
+            } else if (app.status === 'deploymentPending') {
+                setStatus('🟡 Pending');
+            } else if (app.status === 'deploymentInProgress') {
+                setStatus('🟡 In Progress');
+            } else {
+                setStatus('🟡 Unknown');
+            }
+            setUniqueName('');
         } else {
-            setStatus('🟡 Unknown');
+            setUniqueName('No such app found for your account');
         }
-        setUniqueName('');
     }
 
     const CheckDatabases = async (name) => {
@@ -112,15 +120,19 @@ const Service = () => {
         const data = await resp.json();
         let databasesData = data.company.databases.items;
         let database = databasesData.find(database => database.name === name || database.display_name === name);
-        setName(database.display_name);
-        if (database.status === 'ready') {
-            setStatus('🟢 Running');
-        } else if (database.status === 'creating') {
-            setStatus('🟡 Creating');
+        if (database) {
+            setName(database.display_name);
+            if (database.status === 'ready') {
+                setStatus('🟢 Running');
+            } else if (database.status === 'creating') {
+                setStatus('🟡 Creating');
+            } else {
+                setStatus('🟡 Unknown');
+            }
+            setUniqueName('');
         } else {
-            setStatus('🟡 Unknown');
+            setUniqueName('No such database found for your account');
         }
-        setUniqueName('');
     }
 
     useEffect(() => {

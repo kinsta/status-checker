@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom'
 
+import Header from '../components/Header'
+import Footer from '../components/Footer'
+
 const Home = () => {
     return (
         <div className="app-container">
-            <Link to="/">
-                <img src="./../kinsta-logo.png" alt="Kinsta Logo" className="kinsta-logo" />
-            </Link>
+            <Header />
             <div className="container">
                 <div className="container-title">
                     <h1 className="title">Status Checker with Kinsta API</h1>
@@ -41,23 +42,10 @@ const Home = () => {
                                 MyKinsta.
                             </p>
                         </div>
-
                     </Link>
                 </div>
             </div>
-            <div className="footer">
-                <p className="footer-text">
-                    Made with ❤️ by{' '}
-                    <a href="https://kinsta.com/" target="_blank" rel="noreferrer">
-                        Kinsta
-                    </a>
-                    . Use{' '}
-                    <a href="https://kinsta.com/docs/kinsta-api-intro/" target="_blank" rel="noreferrer">
-                        Kinsta API
-                    </a>{' '}
-                    in your projects for free.
-                </p>
-            </div>
+            <Footer />
         </div >
     )
 }

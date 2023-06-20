@@ -32,7 +32,7 @@ a {
 
 .kinsta-logo {
   width: 100px;
-  margin-bottom: 100px;
+  margin: 0 0 100px;
 }
 
 .container {
@@ -93,8 +93,9 @@ a {
 }
 
 .footer {
-  margin-top: 100px;
+  margin: 100px 0 0;
   text-align: center;
+  width: 100%;
 }
 
 .footer p {
@@ -105,6 +106,31 @@ a {
 .footer p a {
   color: rgb(196, 196, 196);
   text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .kinsta-logo {
+    width: 100px;
+    margin: 50px 0;
+  }
+
+  .container {
+    padding: 20px;
+    width: 90%;
+  }
+
+  .container-title {
+    width: 90%;
+  }
+
+  .services {
+    flex-direction: column;
+  }
+
+  .footer {
+    width: 80%;
+    margin: 100px 0 20px;
+  }
 }
 
 /* service section */

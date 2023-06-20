@@ -8,11 +8,11 @@ const Footer = () => {
                 <a href="https://kinsta.com/" target="_blank" rel="noreferrer">
                     Kinsta
                 </a>
-                . Use{' '}
+                . See how you can use the {' '}
                 <a href="https://kinsta.com/docs/kinsta-api-intro/" target="_blank" rel="noreferrer">
                     Kinsta API
                 </a>{' '}
-                in your projects for free.
+                in your projects.
             </p>
         </div>
     )
