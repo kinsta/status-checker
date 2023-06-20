@@ -48,11 +48,11 @@ const Home = () => {
             <div className="footer">
                 <p className="footer-text">
                     Made with ❤️ by{' '}
-                    <a href="" target="_blank">
+                    <a href="https://kinsta.com/" target="_blank" rel="noreferrer">
                         Kinsta
                     </a>
                     . Use{' '}
-                    <a href="" target="_blank">
+                    <a href="https://kinsta.com/docs/kinsta-api-intro/" target="_blank" rel="noreferrer">
                         Kinsta API
                     </a>{' '}
                     in your projects for free.
