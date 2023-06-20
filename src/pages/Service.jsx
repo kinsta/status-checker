@@ -1,6 +1,8 @@
-import { Link } from 'react-router-dom';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
+
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 const Service = () => {
     let [uniqueName, setUniqueName] = useState('');
@@ -130,9 +132,7 @@ const Service = () => {
 
     return (
         <div className="app-container">
-            <Link to="/">
-                <img src="./../kinsta-logo.png" alt="Kinsta Logo" className="kinsta-logo" />
-            </Link>
+            <Header />
             <div className="container">
                 <div className="container-title">
                     <h1 className="title">Status Checker with Kinsta API</h1>
@@ -160,19 +160,7 @@ const Service = () => {
                     </div>
                 )}
             </div>
-            <div className="footer">
-                <p className="footer-text">
-                    Made with ❤️ by{' '}
-                    <a href="https://kinsta.com/" target="_blank" rel="noreferrer">
-                        Kinsta
-                    </a>
-                    . Use{' '}
-                    <a href="https://kinsta.com/docs/kinsta-api-intro/" target="_blank" rel="noreferrer">
-                        Kinsta API
-                    </a>{' '}
-                    in your projects for free.
-                </p>
-            </div>
+            <Footer />
         </div >
     )
 }
