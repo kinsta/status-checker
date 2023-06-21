@@ -8,6 +8,7 @@ const Service = () => {
     let [uniqueName, setUniqueName] = useState('');
     let [status, setStatus] = useState('');
     let [name, setName] = useState('');
+    let [error, setError] = useState('');
 
     const { slug } = useParams();
     const navigate = useNavigate();
@@ -33,6 +34,9 @@ const Service = () => {
     }
 
     const CheckSites = async (name) => {
+        setName('');
+        setStatus('');
+        setError('');
         const query = new URLSearchParams({
             company: `${process.env.REACT_APP_KINSTA_COMPANY_ID}`,
         }).toString();
@@ -61,11 +65,15 @@ const Service = () => {
             }
             setUniqueName('');
         } else {
-            setUniqueName('No such site found for your account');
+            setError('No such site found for your account');
+            setUniqueName('');
         }
     }
 
     const CheckApplications = async (name) => {
+        setName('');
+        setStatus('');
+        setError('');
         const query = new URLSearchParams({
             company: `${process.env.REACT_APP_KINSTA_COMPANY_ID}`,
         }).toString();
@@ -98,11 +106,16 @@ const Service = () => {
             }
             setUniqueName('');
         } else {
-            setUniqueName('No such app found for your account');
+            setError('No such app found for your account');
+            setUniqueName('');
         }
+
     }
 
     const CheckDatabases = async (name) => {
+        setName('');
+        setStatus('');
+        setError('');
         const query = new URLSearchParams({
             company: `${process.env.REACT_APP_KINSTA_COMPANY_ID}`,
         }).toString();
@@ -131,7 +144,8 @@ const Service = () => {
             }
             setUniqueName('');
         } else {
-            setUniqueName('No such database found for your account');
+            setError('No such database found for your account');
+            setUniqueName('');
         }
     }
 
@@ -168,6 +182,13 @@ const Service = () => {
                                 <span className="tag">Status: </span>
                                 <span className="value"> {status}</span>
                             </div>
+                        </div>
+                    </div>
+                )}
+                {error !== '' && (
+                    <div className="services">
+                        <div className="details">
+                            <p>{error}</p>
                         </div>
                     </div>
                 )}
