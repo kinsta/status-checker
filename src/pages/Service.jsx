@@ -53,6 +53,11 @@ const Service = () => {
                         </div>
                     </div>
                 </div>
+                <div className="services">
+                    <div className="details">
+                        <p>Error goes here</p>
+                    </div>
+                </div>
             </div>
             <Footer />
         </div >
