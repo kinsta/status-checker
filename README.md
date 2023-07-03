@@ -1,4 +1,4 @@
-![kinsta-api-status-checker](https://github.com/olawanlejoel/jekyll-blog/assets/57611810/58c66130-b8e4-407f-815b-8054647a46b4)
+![image](https://github.com/kinsta/status-checker/assets/2342458/5dd1711d-a731-423e-8f61-2899fb4ed885)
 
 # How To Create and Use Kinsta API Access Key
 
